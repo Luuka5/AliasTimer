@@ -1,0 +1,92 @@
+
+.reflectionImage {
+  filter: invert(1) opacity(0.9); 
+}
+
+.hourglassContainer {
+  overflow: hidden;
+}
+
+.hourglass {
+  flex-grow: 1;
+  position: relative; 
+  width: 100%;
+  padding-top: 100%;
+  margin: auto;
+  overflow: hidden;
+
+  --time: 0%;
+  transform: scale(1.6);
+}
+
+.hourglassImageContainer {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%; 
+  height: 100%;
+  transform: rotate(-180deg);
+  transition: none;
+}
+
+.hourglassImageContainer.animate {
+  transform: rotate(0deg);
+  transition: 1s transform ease-in-out;
+}
+
+.hourglassImageContainer > img {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%; 
+  height: 100%;
+}
+
+.sandFlow {
+  position: absolute;
+  top: 31%;
+  left: 48.9%;
+  width: 2.2%; 
+  height: 19%;
+  background-color: var(--sand);
+  z-index: 1000;
+  transition: none;
+}
+
+.hourglassImageContainer.animate .sandFlow {
+  top: 49.9%;
+  height: 19.6%;
+  transition: top 1s ease-in, height 1s ease-in;
+}
+  
+.reflectionImageContainer {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding-bottom: 100%;
+}
+
+.reflectionImageContainer > img {
+  width: 100%;
+  height: 100%;
+}
+
+.blocker {
+  transform: translate(0, calc((100% - var(--time)) * 0.196));
+}
+.blocker2 {
+  transform: translate(0, calc(-122.8% + var(--time) * 0.21));
+}
+.blocker path, .blocker2 path {
+  fill: var(--bg) !important;
+}
+
+.blocker path, .blocker2 path {
+  fill: var(--bg);
+}
+
+svg {
+  overflow: visible;
+}
